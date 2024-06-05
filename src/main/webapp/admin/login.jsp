@@ -10,7 +10,7 @@
 <body>
 <div class="loginmanage">
     <div class="py-container">
-        <h4 class="manage-title">XX公司-图书管理系统</h4>
+        <h4 class="manage-title">XX公司-设备管理系统</h4>
         <div class="loginform">
             <ul class="sui-nav nav-tabs tab-wraped">
                 <li class="active">
