@@ -5,9 +5,8 @@ public class Permissions {
 
     @Override
     public String toString() {
-        return "Permissions{" +
-                ", aPermissions='" + aPermissions + '\'' +
-                '}';
+        return "'" + aPermissions + '\''
+                ;
     }
 
 
