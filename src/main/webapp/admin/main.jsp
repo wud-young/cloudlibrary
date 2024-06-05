@@ -35,7 +35,7 @@
                         <a>
                             <img src="${pageContext.request.contextPath}/img/user.jpg" class="user-image"
                                  alt="User Image">
-                            <span class="hidden-xs">${USER_SESSION.name}</span>
+                            <span class="hidden-xs">${USER_SESSION.U_name}</span>
                         </a>
                     </li>
                     <li class="dropdown user user-menu">

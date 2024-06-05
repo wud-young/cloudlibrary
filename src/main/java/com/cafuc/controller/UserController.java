@@ -19,7 +19,8 @@ public class UserController {
             if(u != null){
                 request.getSession().setAttribute("USER_SESSION", u);
                 System.out.println("success");
-                return "redirect:/admin/login.jsp";
+                System.out.println(u);
+                return "redirect:/admin/main.jsp";
             }
             request.setAttribute("msg", "用户名或密码错误");
             return "forward:/admin/login.jsp";
