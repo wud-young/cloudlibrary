@@ -30,4 +30,9 @@ public class UserController {
             return "forward:/admin/login.jsp";
         }
     }
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().removeAttribute("USER_SESSION");
+        return "redirect:/admin/login.jsp";
+    }
 }

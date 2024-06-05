@@ -85,7 +85,7 @@
                                 <button type="button" class="btn bg-olive btn-xs" data-toggle="modal"
                                         data-target="#addOrEditModal" onclick="findBookById(${book.id},'edit')"> 编辑
                                 </button>
-                            </c:if>
+                            </c:if>.
                         </c:if>
                         <c:if test="${book.status ==1 ||book.status ==2}">
                             <button type="button" class="btn bg-olive btn-xs" disabled="true">借阅</button>
@@ -111,16 +111,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="myModalLabel">图书信息</h3>
+                <h3 id="myModalLabel">设备信息</h3>
             </div>
             <div class="modal-body">
                 <form id="addOrEditBook">
-                    <span><input type="hidden" id="ebid" name="id"></span>
+                    <span><input type="hidden" id="ebid" name="U_id"></span>
                     <table id="addOrEditTab" class="table table-bordered table-striped" width="800px">
                         <%--图书的id,不展示在页面--%>
                         <tr>
-                            <td>图书名称</td>
-                            <td><input class="form-control" placeholder="图书名称" name="name" id="ebname"></td>
+                            <td>设备名称</td>
+                            <td><input class="form-control" placeholder="图书名称" name="U_name" id="ebname"></td>
                             <td>标准ISBN</td>
                             <td><input class="form-control" placeholder="标准ISBN" name="isbn" id="ebisbn"></td>
                         </tr>

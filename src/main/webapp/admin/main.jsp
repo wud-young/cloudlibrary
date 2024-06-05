@@ -25,7 +25,7 @@
     <header class="main-header">
         <!-- Logo -->
         <a href="${pageContext.request.contextPath}/admin/main.jsp" class="logo">
-            <span class="logo-lg"><b>云借阅-图书管理系统</b></span>
+            <span class="logo-lg"><b>XX公司-设备管理系统</b></span>
         </a>
         <!-- 头部导航 -->
         <nav class="navbar navbar-static-top">
@@ -35,7 +35,7 @@
                         <a>
                             <img src="${pageContext.request.contextPath}/img/user.jpg" class="user-image"
                                  alt="User Image">
-                            <span class="hidden-xs">${USER_SESSION.uname}</span>
+                            <span class="hidden-xs">${USER_SESSION.getU_name()}</span>
                         </a>
                     </li>
                     <li class="dropdown user user-menu">
@@ -63,19 +63,15 @@
                 </li>
                 <li >
                     <a href="${pageContext.request.contextPath}/book/search" target="iframe">
-                        <i class="fa fa-circle-o"></i>图书借阅
+                        <i class="fa fa-circle-o"></i>用户管理
                     </a>
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/book/searchBorrowed" target="iframe">
-                        <i class="fa fa-circle-o"></i>当前借阅
+                        <i class="fa fa-circle-o"></i>设备管理
                     </a>
                 </li>
-                <li >
-                    <a href="${pageContext.request.contextPath}/record/searchRecords" target="iframe">
-                        <i class="fa fa-circle-o"></i>借阅记录
-                    </a>
-                </li>
+
             </ul>
         </section>
         <!-- /.sidebar -->
