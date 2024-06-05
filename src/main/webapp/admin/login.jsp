@@ -24,10 +24,10 @@
                     <form id="loginform" class="sui-form" action="${pageContext.request.contextPath}/Login"
                           method="post">
                         <div class="input-prepend"><span class="add-on loginname">用户名</span>
-                            <input type="text" placeholder="企业邮箱" class="span2 input-xfat" name="email">
+                            <input type="text" placeholder="企业邮箱" class="span2 input-xfat" name="U_email">
                         </div>
                         <div class="input-prepend"><span class="add-on loginpwd">密码</span>
-                            <input type="password" placeholder="请输入密码" class="span2 input-xfat" name="password">
+                            <input type="password" placeholder="请输入密码" class="span2 input-xfat" name="U_password">
                         </div>
                         <div class="logined">
                             <a class="sui-btn btn-block btn-xlarge btn-danger"
