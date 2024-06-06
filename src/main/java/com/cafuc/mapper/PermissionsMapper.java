@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface PermissionsMapper {
-    @Select("select * from permissions where aid=#{id}")
+    @Select("select apermissions from permissions where aid=#{id}")
     Permissions selectByPrimaryKey(Integer id);
 }
 

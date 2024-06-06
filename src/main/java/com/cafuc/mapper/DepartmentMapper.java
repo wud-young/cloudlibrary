@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface DepartmentMapper {
-    @Select("select dName from equipment_category where did=#{id}")
+    @Select("select dName from department_information where did=#{id}")
     Department selectByPrimaryKey(Integer id);
 }
