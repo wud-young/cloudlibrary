@@ -1,7 +1,8 @@
+
 package com.cafuc.mapper;
 
-import com.cafuc.domain.Department;
-import com.cafuc.domain.User;
+import com.cafuc.domain.Equipment;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -17,15 +18,9 @@ public interface EquipmentMapper {
             @Result(property = "E_Manager", column = "emid" ,one = @One(select = "com.cafuc.mapper.ManagerMapper.selectByPrimaryKey")),
             @Result(property = "E_type",column = "etype")
     })
-    List<Department> SelectEquAll();
+    Page<Equipment> SelectEquAll();
     @Select("SELECT * FROM equipment where eid=#{id}")
-    @Results(id = "equipmentMap",value = {
-            @Result(property = "E_id",column = "eid"),
-            @Result(property = "E_name",column = "ename"),
-            @Result(property = "E_Category",column = "ecid",one = @One(select = "com.cafuc.mapper.CategoryMapper.selectByPrimaryKey")),
-            @Result(property = "e_Status",column = "esid",one = @One(select = "com.cafuc.mapper.StatusMapper.selectByPrimaryKey")),
-            @Result(property = "E_Manager", column = "emid" ,one = @One(select = "com.cafuc.mapper.ManagerMapper.selectByPrimaryKey")),
-            @Result(property = "E_type",column = "etype")
-    })
-    Department SelectByPrimaryKey(Integer id);
+    Equipment SelectByPrimaryKey(Integer id);
+
 }
+

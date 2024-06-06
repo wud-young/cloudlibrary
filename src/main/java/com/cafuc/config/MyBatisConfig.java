@@ -1,15 +1,16 @@
 package com.cafuc.config;
 
 import com.github.pagehelper.PageInterceptor;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 import java.util.Properties;
-
 public class MyBatisConfig {
     /**配置PageInterceptor分页插件*/
     @Bean

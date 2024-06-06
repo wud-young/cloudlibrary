@@ -67,7 +67,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/book/searchBorrowed" target="iframe">
+                    <a href="${pageContext.request.contextPath}/equ/selectNewEqu" target="iframe">
                         <i class="fa fa-circle-o"></i>设备管理
                     </a>
                 </li>

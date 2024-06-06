@@ -3,15 +3,14 @@ package com.cafuc.domain;
 public class Status {
     private int ES_id;
     private String ES_name;
-    private String ES_remark;
+
 
     @Override
     public String toString() {
-        return "Type{" +
+        return "Status{" +
                 "ES_id=" + ES_id +
-                ", ES_name='" + ES_name + '\'' +
-                ", ES_remark='" + ES_remark + '\'' +
-                '}';
+                ", ES_name='" + ES_name + '\''
+                ;
     }
 
     public int getES_id() {
@@ -30,11 +29,4 @@ public class Status {
         this.ES_name = ES_name;
     }
 
-    public String getES_remark() {
-        return ES_remark;
-    }
-
-    public void setES_remark(String ES_remark) {
-        this.ES_remark = ES_remark;
-    }
 }
