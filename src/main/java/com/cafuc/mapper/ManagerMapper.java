@@ -17,5 +17,5 @@ public interface ManagerMapper {
             @Result(property = "EM_age", column = "emage" ),
             @Result(property = "EM_Department",column = "did",one = @One(select = "com.cafuc.mapper.DepartmentMapper.selectByPrimaryKey"))
     })
-    Manager SelectByPrimaryKey();
+    Manager selectByPrimaryKey(int id);
 }

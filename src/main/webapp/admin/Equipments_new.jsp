@@ -36,27 +36,27 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${pageResult.rows}" var="book">
+        <c:forEach items="${pageResult.rows}" var="equipment">
             <tr>
-                <td> ${book.name}</td>
-                <td>${book.author}</td>
-                <td>${book.press}</td>
-                <td>${book.isbn}</td>
+                <td> ${equipment.ename}</td>
+
+                <td>${equipment.press}</td>
+
                 <td>
-                    <c:if test="${book.status ==0}">可借阅</c:if>
-                    <c:if test="${book.status ==1}">借阅中</c:if>
-                    <c:if test="${book.status ==2}">归还中</c:if>
+                    <c:if test="${Equipment.status ==0}">可借阅</c:if>
+                    <c:if test="${Equipment.status ==1}">借阅中</c:if>
+                    <c:if test="${Equipment.status ==2}">归还中</c:if>
                 </td>
-                <td>${book.borrower}</td>
-                <td>${book.borrowTime}</td>
-                <td>${book.returnTime}</td>
+                <td>${Equipment.borrower}</td>
+                <td>${Equipment.borrowTime}</td>
+                <td>${Equipment.returnTime}</td>
                 <td class="text-center">
-                    <c:if test="${book.status ==0}">
+                    <c:if test="${Equipment.status ==0}">
                         <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
-                                onclick="findBookById(${book.id},'borrow')"> 借阅
+                                onclick="findBookById(${Equipment.id},'borrow')"> 借阅
                         </button>
                     </c:if>
-                    <c:if test="${book.status ==1 ||book.status ==2}">
+                    <c:if test="${Equipment.status ==1 ||Equipment.status ==2}">
                         <button type="button" class="btn bg-olive btn-xs" disabled="true">借阅</button>
                     </c:if>
                 </td>
