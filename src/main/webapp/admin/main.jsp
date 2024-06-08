@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li >
-                    <a href="${pageContext.request.contextPath}/book/search" target="iframe">
+                    <a href="${pageContext.request.contextPath}/equ/selectNewUser" target="iframe">
                         <i class="fa fa-circle-o"></i>用户管理
                     </a>
                 </li>

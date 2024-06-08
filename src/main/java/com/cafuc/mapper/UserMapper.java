@@ -1,6 +1,7 @@
 package com.cafuc.mapper;
 
 import com.cafuc.domain.User;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public interface UserMapper {
     @Select("select  * from user")
-    List<User> findAll();
+    Page<User> findAll();
     @Select("SELECT * FROM user WHERE uemail = #{U_email} AND upassword = #{U_password}")
     @Results(id = "userMap",value = {
             @Result(property = "U_id",column = "uid"),

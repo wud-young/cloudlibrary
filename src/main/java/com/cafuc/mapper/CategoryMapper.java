@@ -6,6 +6,11 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface CategoryMapper {
-    @Select("select ecname from equipment_category where ecid=#{id}")
+    @Select("select * from equipment_category where ecid=#{id}")
+    @Results(id = "CategoryMap",value = {
+            @Result(property = "EC_id",column = "ecid"),
+            @Result(property = "EC_name",column = "ecname"),
+            @Result(property = "EC_remark", column = "ecremark" )
+    })
     Category selectByPrimaryKey(Integer id);
 }

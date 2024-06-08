@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface ManagerMapper {
-    @Select("SELECT emname FROM equipment_manager_information WHERE emid =#{id}")
+    @Select("SELECT * FROM equipment_manager_information WHERE emid =#{id}")
     @Results(id = "ManagerMap",value = {
             @Result(property = "EM_id",column = "emid"),
             @Result(property = "EM_name",column = "emname"),

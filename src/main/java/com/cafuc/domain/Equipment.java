@@ -44,11 +44,11 @@ public class Equipment {
         E_Category = e_Category;
     }
 
-    public Status getE_Type() {
+    public Status getE_Status() {
         return e_Status;
     }
 
-    public void setE_Type(Status e_Status) {
+    public void setE_Status(Status e_Status) {
         this.e_Status = e_Status;
     }
 

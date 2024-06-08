@@ -15,7 +15,7 @@
 <body class="hold-transition skin-red sidebar-mini">
 <!--数据展示头部-->
 <div class="box-header with-border">
-    <h3 class="box-title">设备总览</h3>
+    <h3 class="box-title">人员总览</h3>
 </div>
 <!--数据展示头部-->
 <!--数据展示内容区-->
@@ -24,38 +24,30 @@
     <table id="dataList" class="table table-bordered table-striped table-hover dataTable text-center">
         <thead>
         <tr>
-            <th class="sorting">设备id</th>
-            <th class="sorting_asc">设备名称</th>
-            <th class="sorting">设备类型</th>
-            <th class="sorting">设备管理者</th>
-            <th class="sorting">设备状态</th>
-            <th class="sorting">品牌</th>
-            <th class="text-center">操作</th>
+            <th class="sorting">id</th>
+            <th class="sorting_asc">姓名</th>
+            <th class="sorting">邮箱</th>
+            <th class="sorting">管理权限</th>
+
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${pageResult.rows}" var="Equipment">
+        <c:forEach items="${pageResult.rows}" var="User">
 
             <tr>
 
-                <td>${Equipment.getE_id()}</td>
-                <td> ${Equipment.getE_name()}</td>
-                <td>${Equipment.getE_Category().getEC_name()}</td>
-                <td>${Equipment.getE_Manager().getEM_name()}</td>
-                <td>
-                    <c:if test="${Equipment.getE_Status().getES_id()==0}">使用中</c:if>
-                    <c:if test="${Equipment.getE_Status().getES_id()==1}">使用中</c:if>
-                    <c:if test="${Equipment.getE_Status().getES_id()==2}">报废</c:if>
-                </td>
-                <td>${Equipment.getE_type()}</td>
+                <td>${User.getU_id()}</td>
+                <td> ${User.getU_name()}</td>
+                <td>${User.getU_email()}</td>
+                <td>${User.getU_Permissions().getaPermissions()}</td>
                 <td class="text-center">
-                    <c:if test="${Equipment.getE_Status().getES_id() ==0}">
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
                         <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
-                                onclick="findBookById(${Equipment.getE_id()},'borrow')"> 报废
+                                onclick="DeleteUser(${User.getU_id()})"> 删除
                         </button>
                     </c:if>
-                    <c:if test="${Equipment.getE_Status().getES_id() ==1 ||Equipment.getE_Status().getES_id() ==2}">
-                        <button type="button" class="btn bg-olive btn-xs" disabled="true">无法报废</button>
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
+                        <button type="button" class="btn bg-olive btn-xs" disabled="true">无法操作</button>
                     </c:if>
                 </td>
             </tr>
