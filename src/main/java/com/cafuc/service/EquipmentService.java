@@ -9,6 +9,6 @@ import entity.PageResult;
 public interface EquipmentService {
     Page<Equipment> getAllEquipment();
     Equipment getEquipmentById(int id);
-    public PageResult selectNewEqu(Integer pageNum, Integer pageSize);
+    PageResult selectNewEqu(Integer pageNum, Integer pageSize);
 }
 

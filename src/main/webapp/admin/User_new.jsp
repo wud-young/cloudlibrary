@@ -28,6 +28,7 @@
             <th class="sorting_asc">姓名</th>
             <th class="sorting">邮箱</th>
             <th class="sorting">管理权限</th>
+           <%-- <th class="sorting">操作</th>--%>
 
         </tr>
         </thead>
@@ -40,7 +41,7 @@
                 <td> ${User.getU_name()}</td>
                 <td>${User.getU_email()}</td>
                 <td>${User.getU_Permissions().getaPermissions()}</td>
-                <td class="text-center">
+                <%--<td class="text-center">
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
                         <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
                                 onclick="DeleteUser(${User.getU_id()})"> 删除
@@ -49,7 +50,7 @@
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
                         <button type="button" class="btn bg-olive btn-xs" disabled="true">无法操作</button>
                     </c:if>
-                </td>
+                </td>--%>
             </tr>
         </c:forEach>
         </tbody>

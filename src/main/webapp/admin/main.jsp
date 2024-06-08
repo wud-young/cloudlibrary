@@ -80,7 +80,7 @@
     <!-- 内容展示区域 -->
     <div class="content-wrapper">
         <iframe width="100%" id="iframe" name="iframe" onload="SetIFrameHeight()"
-                frameborder="0" src="${pageContext.request.contextPath}/book/selectNewbooks"></iframe>
+                frameborder="0" src="${pageContext.request.contextPath}/equ/PC_new"></iframe>
     </div>
 </div>
 </body>

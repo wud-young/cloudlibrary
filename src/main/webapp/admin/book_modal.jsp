@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="myModalLabel">图书信息</h3>
+                <h3 id="myModalLabel">设备信息</h3>
             </div>
             <div class="modal-body">
                 <form id="borrowBook">
@@ -12,19 +12,19 @@
                         <%--图书的id，不展示在页面--%>
                         <span><input type="hidden" id="bid" name="id"></span>
                         <tr>
-                            <td>图书名称</td>
+                            <td>设备名称</td>
                             <td><input class="form-control" readonly name="name" id="bname"></td>
-                            <td>标准ISBN</td>
+                            <td>设备类型</td>
                             <td><input class="form-control" readonly name="isbn" id="bisbn"></td>
                         </tr>
                         <tr>
-                            <td>出版社</td>
+                            <td>设备管理者</td>
                             <td><input class="form-control" readonly name="press" id="bpress"></td>
-                            <td>作者</td>
+                            <td>设备状态</td>
                             <td><input class="form-control" readonly name="author" id="bauthor"></td>
                         </tr>
                         <tr>
-                            <td>书籍页数</td>
+                            <td>品牌</td>
                             <td><input class="form-control" readonly name="pagination" id="bpagination"></td>
                             <td>归还时间<br/><span style="color: red">*</span></td>
                             <%--时间控件中的内容改变时，调用js文件中的cg()方法--%>

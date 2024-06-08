@@ -11,6 +11,13 @@ import java.util.List;
 
 public interface UserMapper {
     @Select("select  * from user")
+    @Results(id = "useMap",value = {
+            @Result(property = "U_id",column = "uid"),
+            @Result(property = "U_name",column = "uname"),
+            @Result(property = "U_email",column = "uemail"),
+            @Result(property = "U_password",column = "upassword"),
+            @Result(property = "U_Permissions", column = "aid" ,one = @One(select = "com.cafuc.mapper.PermissionsMapper.selectByPrimaryKey")),
+    })
     Page<User> findAll();
     @Select("SELECT * FROM user WHERE uemail = #{U_email} AND upassword = #{U_password}")
     @Results(id = "userMap",value = {
