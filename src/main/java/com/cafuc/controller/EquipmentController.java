@@ -44,7 +44,7 @@ public class EquipmentController {
         modelAndView.addObject("pageResult", pageResult);
         return modelAndView;
     }
-    @RequestMapping("/selectNewUser")
+    @RequestMapping("/selectNewPC")
     public ModelAndView selectNewPC() {
         //查询最新上架的5个的图书信息
         int pageNum = 1;
@@ -55,15 +55,5 @@ public class EquipmentController {
         modelAndView.addObject("pageResult", pageResult);
         return modelAndView;
     }
-    @RequestMapping("/KFCVME50")
-    public ModelAndView KFCVME50() {
-        //查询最新上架的5个的图书信息
-        int pageNum = 1;
-        int pageSize = 5;
-        PageResult pageResult = userService.selectNewUser(pageNum, pageSize);
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("book_modal");
-        modelAndView.addObject("pageResult", pageResult);
-        return modelAndView;
-    }
+
 }

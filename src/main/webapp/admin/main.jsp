@@ -58,7 +58,7 @@
             <ul class="sidebar-menu">
                 <li >
                     <a href="main.jsp">
-                        <i class="fa fa-dashboard"></i> <span>首页</span>
+                        <i class="fa fa-dashboard"></i> <span>合同管理</span>
                     </a>
                 </li>
                 <li >
@@ -80,7 +80,7 @@
     <!-- 内容展示区域 -->
     <div class="content-wrapper">
         <iframe width="100%" id="iframe" name="iframe" onload="SetIFrameHeight()"
-                frameborder="0" src="${pageContext.request.contextPath}/equ/PC_new"></iframe>
+                frameborder="0" src="${pageContext.request.contextPath}/equ/selectNewPC"></iframe>
     </div>
 </div>
 </body>
