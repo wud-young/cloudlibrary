@@ -49,15 +49,26 @@
                 </td>
                 <td>${Equipment.getE_type()}</td>
                 <td class="text-center">
-                    <c:if test="${Equipment.getE_Status().getES_id() ==0}">
+                    <c:if test="${Equipment.getE_Status().getES_id() ==1 && USER_SESSION.getU_Permissions().getP_id()==2}">
                         <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
                                 onclick="findBookById(${Equipment.getE_id()},'borrow')"> 报废
                         </button>
                     </c:if>
-                    <c:if test="${Equipment.getE_Status().getES_id() ==1 ||Equipment.getE_Status().getES_id() ==2}">
-                        <button type="button" class="btn bg-olive btn-xs" disabled="true">无法报废</button>
+                    <c:if test="${Equipment.getE_Status().getES_id() ==2}">
+                        <button type="button" class="btn bg-olive btn-xs" disabled="true">已报废</button>
                     </c:if>
                 </td>
+                <td class="text-center">
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
+                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
+                                onclick="DeleteUser(${User.getU_id()})"> 删除
+                        </button>
+                    </c:if>
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
+                        <button type="button" class="btn bg-olive btn-xs" disabled="true">只读</button>
+                    </c:if>
+                </td>
+
             </tr>
         </c:forEach>
         </tbody>

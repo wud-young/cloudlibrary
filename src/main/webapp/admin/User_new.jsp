@@ -41,16 +41,16 @@
                 <td> ${User.getU_name()}</td>
                 <td>${User.getU_email()}</td>
                 <td>${User.getU_Permissions().getaPermissions()}</td>
-                <%--<td class="text-center">
+                <td class="text-center">
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
                         <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
                                 onclick="DeleteUser(${User.getU_id()})"> 删除
                         </button>
                     </c:if>
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
-                        <button type="button" class="btn bg-olive btn-xs" disabled="true">无法操作</button>
+                        <button type="button" class="btn bg-olive btn-xs" disabled="true">只读</button>
                     </c:if>
-                </td>--%>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

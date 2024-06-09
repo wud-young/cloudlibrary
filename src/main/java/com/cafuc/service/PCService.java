@@ -8,4 +8,5 @@ public interface PCService {
     PurchaseContract SelectByPrimaryKey(Integer id);
     Page<PurchaseContract> SelectALL();
     PageResult selectNewPC(Integer pageNum, Integer pageSize);
+    void DeletePcbyId(Integer id);
 }

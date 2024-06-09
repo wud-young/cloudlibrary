@@ -32,5 +32,7 @@ public interface PurchaseContractMapper {
             @Result(property = "P_name",column = "pname")
     })
     Page<PurchaseContract> selectALL();
+    @Delete("Delete FROM purchase_contract where pid = #{id}"  )
+    void DeleteByPrimaryKey(Integer id);
 }
 

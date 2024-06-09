@@ -29,4 +29,8 @@ public class PCServiceImpl implements PCService {
         Page<PurchaseContract> page=purchaseContractMapper.selectALL();
         return new PageResult(page.getTotal(),page.getResult());
     }
+    @Override
+    public void DeletePcbyId(Integer id) {
+        purchaseContractMapper.DeleteByPrimaryKey(id);
+    }
 }

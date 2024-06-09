@@ -50,6 +50,14 @@ function resetStyle() {
     });
 }
 //查询id对应的图书信息，并将图书信息回显到编辑或借阅的窗口中
+function DeletePC(id){
+    var url = getProjectPath()+"/equ/DeletePCById?id=" + id;
+    $.get(url, function (response) {
+        window.location.href=url;
+
+    })
+}
+
 function findBookById(id,doname) {
     resetStyle()
     var url = getProjectPath()+"/book/findById?id=" + id;

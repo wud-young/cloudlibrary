@@ -16,6 +16,35 @@
 <!--数据展示头部-->
 <div class="box-header with-border">
     <h3 class="box-title">合同总览</h3>
+    <table id="actList" class="table table-bordered table-striped table-hover dataTable text-center">
+        <tbody>
+            <tr>
+
+                <td class="text-center">
+
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
+                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
+                                onclick="DeletePC(${User.getU_id()})"> 增加
+                        </button>
+                    </c:if>
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
+                        <button type="button" class="btn bg-olive btn-xs" disabled="true">只读</button>
+                    </c:if>
+                </td>
+                <td class="text-center">
+
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
+                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
+                                onclick="DeleteUser(${User.getU_id()})"> 更改
+                        </button>
+                    </c:if>
+                    <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
+                        <button type="button" class="btn bg-olive btn-xs" disabled="true">只读</button>
+                    </c:if>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <!--数据展示头部-->
 <!--数据展示内容区-->
@@ -68,6 +97,6 @@
 </div>
 <!-- 数据展示内容区/ -->
 <%--引入存放模态窗口的页面--%>
-<jsp:include page="/admin/book_modal.jsp"></jsp:include>
+<jsp:include page="/admin/PC_modal.jsp"></jsp:include>
 </body>
 </html>

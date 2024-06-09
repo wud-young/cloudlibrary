@@ -55,5 +55,10 @@ public class EquipmentController {
         modelAndView.addObject("pageResult", pageResult);
         return modelAndView;
     }
-
+    @RequestMapping("/DeletePCById")
+    public String DeletePCById(int id) {
+    pcService.DeletePcbyId(id);
+    System.out.println("删除成功");
+    return "redirect:/equ/selectNewPC";
+    }
 }
