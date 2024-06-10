@@ -27,6 +27,7 @@ public interface EquipmentMapper {
             @Result(property = "E_type",column = "etype")
     })
     Equipment selectByPrimaryKey(Integer id);
+//    @Insert("insert into equipment(eid,ename)")
 
 }
 

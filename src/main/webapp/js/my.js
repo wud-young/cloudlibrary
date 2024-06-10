@@ -24,7 +24,7 @@ function cg() {
 }
 //点击借阅图书时执行
 function borrow() {
-    var url =getProjectPath()+ "/book/borrowBook";
+    var url =getProjectPath()+ "/equ/borrowBook";
     $.post(url, $("#borrowBook").serialize(), function (response) {
         alert(response.message)
         if (response.success == true) {
@@ -51,27 +51,16 @@ function resetStyle() {
 }
 //查询id对应的图书信息，并将图书信息回显到编辑或借阅的窗口中
 function DeletePC(id){
-    var url = getProjectPath()+"/equ/DeletePCById?id=" + id;
-    $.get(url, function (response) {
-        window.location.href=url;
-
-    })
+    window.location.href=getProjectPath()+"/equ/DeletePCById?id=" + id;
 }
 
-function findBookById(id,doname) {
+function findPCById(id,doname) {
     resetStyle()
     var url = getProjectPath()+"/book/findById?id=" + id;
     $.get(url, function (response) {
         //如果是编辑图书，将获取的图书信息回显到编辑的窗口中
-        if(doname=='edit'){
+        if(doname=='up'){
             $("#ebid").val(response.data.id);
-            $("#ebname").val(response.data.name);
-            $("#ebisbn").val(response.data.isbn);
-            $("#ebpress").val(response.data.press);
-            $("#ebauthor").val(response.data.author);
-            $("#ebpagination").val(response.data.pagination);
-            $("#ebprice").val(response.data.price);
-            $("#ebstatus").val(response.data.status);
         }
         //如果是借阅图书，将获取的图书信息回显到借阅的窗口中
         if(doname=='borrow'){
