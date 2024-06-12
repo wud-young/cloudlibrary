@@ -44,7 +44,7 @@
                 <td class="text-center">
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
                         <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
-                                onclick="DeleteUser(${User.getU_id()})"> 删除
+                                onclick="Delete(${User.getU_id()},'USER')"> 删除
                         </button>
                     </c:if>
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
@@ -60,5 +60,19 @@
 <!-- 数据展示内容区/ -->
 <%--引入存放模态窗口的页面--%>
 <jsp:include page="/admin/book_modal.jsp"></jsp:include>
+<script>
+    /*分页插件展示的总页数*/
+    pageargs.total = Math.ceil(${pageResult.total}/pageargs.pagesize);
+    /*分页插件当前的页码*/
+    pageargs.cur = ${pageNum}
+        /*分页插件页码变化时将跳转到的服务器端的路径*/
+        pageargs.gourl = "${gourl}"
+    /*保存搜索框中的搜索条件，页码变化时携带之前的搜索条件*/
+    bookVO.name = "${search.name}"
+    bookVO.author = "${search.author}"
+    bookVO.press = "${search.press}"
+    /*分页效果*/
+    pagination(pageargs);
+</script>
 </body>
 </html>

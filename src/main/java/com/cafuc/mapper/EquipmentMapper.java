@@ -27,6 +27,8 @@ public interface EquipmentMapper {
             @Result(property = "E_type",column = "etype")
     })
     Equipment selectByPrimaryKey(Integer id);
+    @Delete("DELETE FROM equipment where eid=#{id}")
+    void DeleteEqubyId(int id);
 //    @Insert("insert into equipment(eid,ename)")
 
 }

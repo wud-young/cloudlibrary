@@ -22,6 +22,29 @@ function cg() {
         }
     }
 }
+function ucg() {
+    $("#savemsg").attr("disabled", false);
+    var rt = $("#time").val().split("-");
+    var ny = new Date().getFullYear();
+    var nm = new Date().getMonth() + 1;
+    var nd = new Date().getDate();
+    if (rt[0] > ny) {
+        alert("日期不能晚于今天")
+        $("#savemsg").attr("disabled", true);
+    } else if (rt[0] == ny) {
+        if (rt[1] > nm) {
+            alert("日期不能晚于今天")
+            $("#savemsg").attr("disabled", true);
+        } else if (rt[1] == nm) {
+            if (rt[2] > nd) {
+                alert("日期不能晚于今天")
+                $("#savemsg").attr("disabled", true);
+            } else {
+                $("#savemsg").attr("disabled", false);
+            }
+        }
+    }
+}
 //点击借阅图书时执行
 function borrow() {
     var url =getProjectPath()+ "/equ/borrowBook";
@@ -32,7 +55,15 @@ function borrow() {
         }
     })
 }
-
+function insertPC() {
+    var url =getProjectPath()+ "/equ/insertPC";
+    $.post(url, $("#borrowBook").serialize(), function (response) {
+        alert(response.message)
+        if (response.success == true) {
+            window.location.href = getProjectPath()+"/book/search";
+        }
+    })
+}
 //重置添加和编辑窗口中输入框的内容
 function resetFrom() {
     $("#aoe").attr("disabled",true)
@@ -49,18 +80,36 @@ function resetStyle() {
         $(this).attr("style","")
     });
 }
-//查询id对应的图书信息，并将图书信息回显到编辑或借阅的窗口中
-function DeletePC(id){
-    window.location.href=getProjectPath()+"/equ/DeletePCById?id=" + id;
+
+Delete=function(id,doname){
+    resetStyle()
+    if (doname=='PC')
+    {
+        window.location.href=getProjectPath()+"/equ/DeletePCById?id=" + id;
+    }
+    else if (doname=='USER'){
+        window.location.href=getProjectPath()+"/equ/DeleteUSERById?id=" + id;
+    }else if (doname == 'EQU'){
+        window.location.href=getProjectPath()+"/equ/DeleteEQUById?id=" + id;
+    }
+
 }
 
-function findPCById(id,doname) {
+findPCById=function(id,doname) {
     resetStyle()
-    var url = getProjectPath()+"/book/findById?id=" + id;
+    var url = getProjectPath()+"/equ/findPCById?id=" + id;
     $.get(url, function (response) {
         //如果是编辑图书，将获取的图书信息回显到编辑的窗口中
+        console.log(response.data);
         if(doname=='up'){
             $("#ebid").val(response.data.id);
+            $("#ebname").val(response.data.name);
+            $("#ebisbn").val(response.data.isbn);
+            $("#ebpress").val(response.data.press);
+            $("#ebauthor").val(response.data.author);
+            $("#ebpagination").val(response.data.pagination);
+            $("#ebprice").val(response.data.price);
+            $("#ebstatus").val(response.data.status);
         }
         //如果是借阅图书，将获取的图书信息回显到借阅的窗口中
         if(doname=='borrow'){

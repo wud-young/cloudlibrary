@@ -28,6 +28,8 @@ public interface UserMapper {
             @Result(property = "U_Permissions", column = "aid" ,one = @One(select = "com.cafuc.mapper.PermissionsMapper.selectByPrimaryKey")),
     })
     User Login(User user);
+    @Delete("delete from user where uid = #{id}")
+    void DeleteUserbyId(int id);
 
 /*    @Select("SELECT * FROM users")
     @Results({

@@ -50,8 +50,8 @@
                 <td>${Equipment.getE_type()}</td>
                 <td class="text-center">
                     <c:if test="${Equipment.getE_Status().getES_id() ==1 && USER_SESSION.getU_Permissions().getP_id()==2}">
-                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
-                                onclick="findBookById(${Equipment.getE_id()},'borrow')"> 报废
+                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#EQUborrowModal"
+                                onclick="findBookById(${Equipment.getE_id()},'borrow')"> 更改
                         </button>
                     </c:if>
                     <c:if test="${Equipment.getE_Status().getES_id() ==2}">
@@ -60,8 +60,8 @@
                 </td>
                 <td class="text-center">
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==2}">
-                        <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#borrowModal"
-                                onclick="DeleteUser(${User.getU_id()})"> 删除
+                        <button type="button" class="btn bg-olive btn-xs"
+                                onclick="Delete(${Equipment.getE_id()},'EQU')"> 删除
                         </button>
                     </c:if>
                     <c:if test="${USER_SESSION.getU_Permissions().getP_id()==1}">
@@ -78,5 +78,6 @@
 <!-- 数据展示内容区/ -->
 <%--引入存放模态窗口的页面--%>
 <jsp:include page="/admin/book_modal.jsp"></jsp:include>
+
 </body>
 </html>

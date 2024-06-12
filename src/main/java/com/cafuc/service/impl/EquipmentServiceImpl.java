@@ -20,6 +20,12 @@ public class EquipmentServiceImpl implements EquipmentService {
         Page<Equipment> page=equipmentMapper.selectEquAll();
         return new PageResult(page.getTotal(),page.getResult());
     }
+
+    @Override
+    public void DeleteEqubyId(int id) {
+        equipmentMapper.DeleteEqubyId(id);
+    }
+
     @Override
     public Page<Equipment> getAllEquipment() {
         return equipmentMapper.selectEquAll();

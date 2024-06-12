@@ -10,4 +10,5 @@ public interface UserService {
     User Login(User user);
     List<User> findAll();
     PageResult selectNewUser(Integer pageNum, Integer pageSize);
+    void DeleteUserbyId(Integer id);
 }

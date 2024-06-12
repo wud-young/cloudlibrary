@@ -28,6 +28,12 @@ public class UserServiceImpl implements UserService {
         Page<User> page=userMapper.findAll();
         return new PageResult(page.getTotal(),page.getResult());
     }
+
+    @Override
+    public void DeleteUserbyId(Integer id) {
+        userMapper.DeleteUserbyId(id);
+    }
+
     @Override
     public List<User> findAll() {
         return userMapper.findAll();

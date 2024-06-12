@@ -1,11 +1,14 @@
 package com.cafuc.controller;
 
 
+import com.cafuc.domain.Equipment;
+import com.cafuc.domain.PurchaseContract;
 import com.cafuc.service.EquipmentService;
 
 import com.cafuc.service.PCService;
 import com.cafuc.service.UserService;
 import entity.PageResult;
+import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,10 +58,35 @@ public class EquipmentController {
         modelAndView.addObject("pageResult", pageResult);
         return modelAndView;
     }
+    @RequestMapping("findPCById")
+    public Result<PurchaseContract> findPCById(int id) {
+        try {
+            PurchaseContract PC=pcService.SelectByPrimaryKey(id);
+            if(PC==null){
+                return new Result(false,"查询设备失败！");
+            }
+            return new Result(true,"查询设备成功",PC);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result(false,"查询设备失败！");
+        }
+    }
     @RequestMapping("/DeletePCById")
     public String DeletePCById(int id) {
     pcService.DeletePcbyId(id);
     System.out.println("删除成功");
     return "redirect:/equ/selectNewPC";
+    }
+    @RequestMapping("/DeleteUSERById")
+    public String DeleteUSERById(int id) {
+        userService.DeleteUserbyId(id);
+        System.out.println("删除成功");
+        return "redirect:/equ/selectNewUser";
+    }
+    @RequestMapping("/DeleteEQUById")
+    public String DeleteEQUById(int id) {
+        equipmentService.DeleteEqubyId(id);
+        System.out.println("删除成功");
+        return "redirect:/equ/selectNewEqu";
     }
 }

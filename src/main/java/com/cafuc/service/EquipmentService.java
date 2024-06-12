@@ -10,5 +10,6 @@ public interface EquipmentService {
     Page<Equipment> getAllEquipment();
     Equipment getEquipmentById(int id);
     PageResult selectNewEqu(Integer pageNum, Integer pageSize);
+    void DeleteEqubyId(int id);
 }
 
